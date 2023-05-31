@@ -1,0 +1,14 @@
+Priority Queue
+    A queue that pops item in priority, not FIFO, order
+
+public class PriorityQueue<T> {
+    readonly Heap<T> heap = new Heap<>();
+    public void enqueue(T value) {
+        heap.push(value);
+    }
+    public T dequeue() {
+        T value = heap.top();
+        heap.pop();
+        return value;
+    }
+}

@@ -1,0 +1,89 @@
+Balanced tree
+
+Unbalanced tree
+
+    Balance factor:-
+                    The difference between the heights of left and right sub-trees.
+
+        4
+
+    left height: 0
+    right height: 0
+    balance factor: 0
+
+            4
+          2
+
+        left height: 1
+        right height: 0
+        balance factor: -1
+
+            4
+                5
+                    6
+
+        left height: 0
+        right height: 2
+        balance factor: 2
+
+    Heavy:-
+            the state when the balance factor of a node differs by more than one.
+
+
+            4
+          2     5
+        1
+
+        left height: 2
+        right height: 1
+        balance factor: -1
+
+
+            4
+          2     5
+        1           6
+
+        left height: 2
+        right height: 2
+        balance factor: 0
+
+To make an unbalanced tree to balanced tree, we need to do rotations
+1. Left rotation
+2. Right rotation
+3. Left-Right rotation
+4. Right-left rotation
+
+-----------------------------------
+1. Left rotation
+    a.  Right child becomes the new root
+    b.  Left child of the new root is assigned to the right child of the old root
+    c.  Previous root becomes the new root's left child.
+
+2. Right rotation
+    a.  Left child becomes the new root
+    b.  Right child of the new root is assigned to left child of the old root
+    c.  Previous root becomes the new root's right child
+
+3. Left-Right rotation
+    Left rotation of a right rotated tree
+    a.  Right rotate the right child of the root node
+    b.  Left rotate the root.
+
+4. Right-Left rotation
+    Right rotation of left rotated tree.
+    a.  Left rotation of left child of the root node
+    b.  Right rotation the root.
+
+
+Now, when should we use what rotation?
+
+If the tree is left heavy and if the left child is right heavy,
+            then perform Right-Left rotation
+otherwise perform right rotation
+
+If the tree is right heavy and it's right child is left heavy
+        then perform Left-Right rotation
+otherwise perform left rotation
+
+If the tree is neither left  or right heavy
+    then the tree is balanced

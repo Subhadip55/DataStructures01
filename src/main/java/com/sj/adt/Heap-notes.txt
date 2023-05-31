@@ -1,0 +1,93 @@
+Heap
+    A tree based container type that provides O(1) access to the minimum (min-heap) or maximum (max-heap) value
+   while satisfying the heap priority.
+
+Heap property
+    The value in the current tree node is greater than, or equal to, its children (max-heap).
+
+Max-heap                                                Min-heap
+             8                                                                      1
+        /           \                                                           /        \
+        5               6                                                   3              2
+    /       \       /       \                                           /       \       /        \
+    4       2       1       3                                           8       4      5           6
+
+0 2 4 8 16 32
+0   2   6   14
+N.B.
+    Max heap --> Parent node will always greater than or equal to its children.
+    Min heap --> Parent node will always lesser than or equal to its children.
+
+
+Min heap
+---------
+Min heap must satisfy the heap property.
+
+Max heap
+----------
+Max heap must satisfy the heap property.
+the tree is a complete tree.
+
+Complete tree
+--------------
+A tree where every level is filled out from left to right be starting the next level.
+
+Trees as array
+---------------
+    Complete binary trees can be compactly stored as arrays eliminating all structural overhead and providing O(1)
+    data access.
+
+Relationship of index , Parent and child relationship
+------------------------------------------------------
+Index   0   1   2   3   4   5   6   7   8   9   10
+Parent  X   0   0   1   1   2   2   3   3   4   4
+Left    1   3   5   7   9   11  13  15  17  19  21
+Right   2   4   6   8   10  12  14  16  18  20  22
+
+
+
+int parent(int index) {
+    return (index - 1) / 2;
+}
+
+int left(int index) {
+    return (index * 2) + 1;
+}
+
+int right(int index) {
+    return (index * 2) + 2;
+}
+
+Representation:
+0   1   2   3   4   5   6   7   8   9   10
+
+
+Heap Operations
+----------------
+1. Adding values (push)
+2. Retrieving min / max value (top)
+3. Removing min / max value (pop)
+
+
+1. Push
+    i) Add new value to the end of the heap array
+    ii) While heap property is not satisfied, swap the new item with its parent
+
+2. Top
+    Return the root node's value
+
+    pseudocode:
+
+    public T top() {
+        if (count > 0) {
+            return data[0];
+        }
+        throw new Exception("Top called on empty heap.");
+    }
+
+3. Pop
+    Removes the top item from the heap, moving the replacement item into first valid position in the heap tree.
+
+    a) Move the last item in the heap array into the zero (root) index
+    b) While the heap property is not satisfied, swap the item one of its children
+

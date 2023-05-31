@@ -1,0 +1,63 @@
+public class UserApp {
+    public static void main(String[] args) {
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+//        tree.addNode(7);
+//        tree.addNode(4);
+//        tree.addNode(10);
+//        tree.addNode(6);
+//        tree.addNode(8);
+//        tree.addNode(11);
+//        tree.addNode(5);
+
+//        to check right-left rotation
+        tree.addNode(3);
+        tree.addNode(1);
+        tree.addNode(2);
+
+////        to check left-right rotation
+//        tree.addNode(1);
+//        tree.addNode(3);
+//        tree.addNode(2);
+
+        BalancedTree<Integer> bt = new BalancedTree<>(tree.getRoot());
+
+//        //left rotation
+//        System.out.println("Before left rotation, balance factor = " + bt.balanceFactor(tree.getRoot()));
+//        tree.setRoot(bt.leftRotation(tree.getRoot()));  // after left rotation we need to update the root
+//        System.out.println(tree.getNodeKey(tree.getRoot()));    // printing the key of root
+//        System.out.println("After left rotation, balance factor = " + bt.balanceFactor(tree.getRoot()));
+////        tree.inOrderTraversing(tree.getRoot());
+
+//          // right rotation
+//        System.out.println("Before right rotation, balance factor = " + bt.balanceFactor(tree.getRoot()));
+//        tree.setRoot(bt.rightRotation(tree.getRoot())); // after right rotation, root is going to update
+//        System.out.println(tree.getNodeKey(tree.getRoot()));
+//        System.out.println("After right rotation, balance factor = " + bt.balanceFactor(tree.getRoot()));
+
+////        Right-Left rotation
+//        System.out.println("Before right-left rotation, the root is = " + tree.getNodeKey(tree.getRoot()));
+//        System.out.println("Before right-left rotation, balance factor is = " + bt.balanceFactor(tree.getRoot()));
+//
+//        tree.setRoot(bt.rightLeftRotation(tree.getRoot()));
+//
+//        System.out.println("After right-left rotation, the root is = " + tree.getNodeKey(tree.getRoot()));
+//        System.out.println("After right-left rotation, balance factor is = " + bt.balanceFactor(tree.getRoot()));
+
+////        Left-Right rotation
+//        System.out.println("Before left-right rotation, the root is = " + tree.getNodeKey(tree.getRoot()));
+//        System.out.println("Before left-right rotation, balance factor is = " + bt.balanceFactor(tree.getRoot()));
+//
+//        tree.setRoot(bt.leftRightRotation(tree.getRoot()));
+//
+//        System.out.println("After left-right rotation, the root is = " + tree.getNodeKey(tree.getRoot()));
+//        System.out.println("After left-right rotation, balance factor is = " + bt.balanceFactor(tree.getRoot()));
+
+//        Now check for balance method
+        System.out.println("Before balance, the root is " + tree.getNodeKey(tree.getRoot())
+                            + "\nBefore balance, the balance factor is " + bt.balanceFactor(tree.getRoot()));
+        tree.setRoot(bt.balance(tree.getRoot()));
+        System.out.println("After balance, the root is " + tree.getNodeKey(tree.getRoot()) +
+        "\nAfter balance, the balance factor is "+ bt.balanceFactor(tree.getRoot()));
+    }
+
+}
